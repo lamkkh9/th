@@ -18,7 +18,7 @@ int main() {
         cout <<num[i]<<" ";
         x=x+num[i];
     }
-    cout<<"Tong day so da nhap :"<<x,,endl;
+    cout<<"Tong day so da nhap :"<<x<<endl;
     cout<<"Trung binh cong day so da nhap :"<<x/n<<endl;
 
     return 0;
