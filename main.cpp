@@ -12,15 +12,17 @@ int main() {
         cout << "Nhap so thu " << i + 1 << ": ";
         cin >> num[i];
     }
-
+	double max=num[0];
+	int dem=1;
     for (int i = 0; i < n; i++) {
-        cout << "SO " << num[i] << " la ";
-        if (static_cast<int>(num[i]) % 2 == 0) {
-            cout << "Chan" << endl;
-        } else {
-            cout << "Le" << endl;
-        }
+        if(num[i]>max){
+        	max=num[i];
+        	dem=1;
+		}else if(num[i]==max){
+			dem++;
+		}
     }
+    cout<<"co "<<dem<<"lon nhat";
 
     return 0;
 }
