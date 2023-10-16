@@ -4,6 +4,60 @@
 
 using namespace std;
 
+struct SinhVien {
+    string ten;
+    vector<int> diemMonHoc;
+};
+
+int main() {
+    int n, m;
+
+    cout << "Nhap so sinh vien: ";
+    cin >> n;
+    cout << "Nhap so mon hoc: ";
+    cin >> m;
+
+    vector<SinhVien> danhSachSinhVien(n);
+
+    // Nhập điểm cho từng sinh viên và môn học
+    for (int i = 0; i < n; i++) {
+        cout << "Nhap ten sinh vien thu " << i + 1 << ": ";
+        cin >> danhSachSinhVien[i].ten;
+
+        cout << "Nhap diem cho " << m << " mon hoc cua sinh vien " << danhSachSinhVien[i].ten << ":\n";
+        for (int j = 0; j < m; j++) {
+            int diem;
+            cout << "Mon hoc " << j + 1 << ": ";
+            cin >> diem;
+            danhSachSinhVien[i].diemMonHoc.push_back(diem);
+        }
+    }
+
+    // Kiểm tra và hiển thị môn học mà từng sinh viên trượt
+    for (int i = 0; i < n; i++) {
+        cout << "Sinh vien " << danhSachSinhVien[i].ten << " truot cac mon hoc sau: ";
+        for (int j = 0; j < m; j++) {
+            if (danhSachSinhVien[i].diemMonHoc[j] < 5) {
+                cout << "Mon hoc " << j + 1 << " ";
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
 // Định nghĩa cấu trúc SinhVien
 struct SinhVien {
     string ten;
@@ -41,7 +95,7 @@ int main() {
 }
 
     return 0;
-}
+}h
 
 
 
