@@ -1,4 +1,77 @@
 #include <iostream>
+using namespace std;
+int main()
+{
+    int m, n, i = 0, j = 0, dem_truot;
+    cout <<"Nhap so sinh vien n: ";
+    cin >> n;
+    cout << "Nhap so mon hoc m: ";
+    cin >> m;
+    char Name[n][100];
+    char Mon[n][100];
+    float Diem[n][m];
+    for(i = 0; i< n; i++)
+     {
+       cout << "Nhap ten sinh vien thu " << i+1 << ": ";
+       cin >> Name[i];
+    }
+    for(i = 0; i< m; i++)
+     {
+       cout << "Nhap ten mon hoc so " << i+1 << ": ";
+       cin >> Mon[i];
+    }
+    for(i = 0; i< n; i++)
+     {
+        for(j = 0; j< m; j++)
+         {
+            cout << "Nhap diem mon "<< Mon[j] <<" cho sinh vien " << Name[i] << " mon thu " << j+1 << ": ";
+            cin >> Diem[i][j];
+
+        }
+    }
+    int max_truot=0, min_truot=m, sv_min=0, sv_max=0;
+    cout << "Bang diem vua nhap la: " << endl;
+    for(i = 0; i< n; i++)
+        {
+            cout<< Name[i] << ":" << endl;
+            dem_truot=0;
+            for(j = 0; j< m; j++)
+              {
+             cout << Mon[j] << ":" << Diem[i][j] ;
+             if(Diem[i][j] < 4){
+                cout<< "(truot)" << "   ";
+                dem_truot++;
+             }else{
+                 cout<< "(do)" << "   ";
+
+             }
+             }
+            cout << "\nSinh vien nay truot tong cong "<<dem_truot<<" mon"<<endl;
+            if(dem_truot<min_truot){
+                min_truot = dem_truot;
+                sv_min=i;
+            }
+            if(dem_truot>max_truot){
+                max_truot = dem_truot;
+                sv_max=i;
+
+            }
+    }
+    cout<<"Sinh vien truot nhieu nhat la "<< Name[sv_max] << " voi so min truot la :" << max_truot;
+    cout<<"\nSinh vien truot it nhat la "<< Name[sv_min]<< " voi so min truot la :" << min_truot;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
 #include <vector>
 #include <string>
 
