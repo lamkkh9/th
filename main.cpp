@@ -1,4 +1,79 @@
 #include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Nhập số lượng mặt hàng: ";
+    cin >> n;
+
+    // Khai báo và khởi tạo mảng các mảng 1 chiều cho tên, giá và số lượng
+    string Bang_ten[n];
+    int Bang_gia[n];
+    int Bang_so_luong[n];
+    int Bang_gia_tri[n];
+
+    // Nhập thông tin cho từng sản phẩm
+    for (int i = 0; i < n; i++) {
+        cout << "Nhap ten san pham " << i + 1 << ": ";
+        cin >> Bang_ten[i]; // Tên sản phẩm
+        cout << "Nhap gia san pham " << i + 1 << ": ";
+        cin >> Bang_gia[i]; // Giá sản phẩm
+        cout << "Nhap so luong san pham " << i + 1 << ": ";
+        cin >> Bang_so_luong[i]; // Số lượng sản phẩm
+        Bang_gia_tri[i] = Bang_gia[i] * Bang_so_luong[i];
+    }
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = i + 1; j < n; j++) {
+                    if (Bang_gia[j] < Bang_gia[i]) {
+                        int tempGia = Bang_gia[i];
+                        Bang_gia[i] = Bang_gia[j];
+                        Bang_gia[j] = tempGia;
+                        string tempTen = Bang_ten[i];
+                        Bang_ten[i] = Bang_ten[j];
+                        Bang_ten[j] = tempTen;
+                        int tempSoLuong = Bang_so_luong[i];
+                        Bang_so_luong[i] = Bang_so_luong[j];
+                        Bang_so_luong[j] = tempSoLuong;
+                    }
+                }
+            } 
+    // Hiển thị thông tin sản phẩm
+    cout << "Danh sach san pham:\n";
+    for (int i = 0; i < n; i++) {
+        cout << "- San pham " << i + 1 << ":\n";
+        cout << "+ Ten: " << Bang_ten[i] << endl;
+        cout << "+ Gia: " << Bang_gia[i] << endl;
+        cout << "+ So luong: " << Bang_so_luong[i] << endl;
+        cout << "+ Tong gia tri san pham: " << Bang_gia_tri[i] << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
 using namespace std;
 int main()
 {
